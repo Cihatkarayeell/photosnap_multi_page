@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "gulp",
     "prod": "gulp --prod",
-    "build": "gulp --prod"
+    "build": "gulp --prod" ,
+    "outputDirectory": "public"
   },
   "browserslist": [
     "last 10 versions",
