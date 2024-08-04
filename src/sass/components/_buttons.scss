@@ -1,0 +1,138 @@
+.button-1{
+    background-color: $black;
+    padding: 1.2rem 2.4rem !important;
+    width: max-content;
+    transition: 300ms ease;
+    border: none;
+    cursor: pointer;
+    display: block;
+    span{
+        font-size: 1.2rem;
+        color: $white;
+        line-height: 1.6rem;
+        @include bold;
+        letter-spacing: .2rem;
+    }
+    &:hover{
+        background-color: $light-gray;
+        span{
+            color: $black;
+        }
+    }
+}
+.button-2{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0 1.6rem;
+    border: none;
+    cursor: pointer;
+    padding:0 ;
+    .button-text{
+        color: $black;
+        line-height: 1.6rem;
+        font-size: 1.2rem;
+        @include bold;
+        position: relative;
+        letter-spacing: .2rem;
+        &:after{
+            content: "";
+            position: absolute;
+            bottom: -.2rem;
+            left: 0;
+            width: 100%;
+            background-color: $black;
+            height: .1rem;
+            min-height: .1rem;
+            transition: transform 300ms ease;
+            transform: scale(0);
+        }
+    }
+    .icon{
+        max-width: 4.2rem;
+        max-height: 1.2rem;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &:hover{
+        .button-text{
+            &:after{
+                transform: scale(1.01);
+            }
+        }
+    }
+}
+.button-3{
+    background-color: $white;
+    padding: 1.2rem 2.4rem !important;
+    width: max-content;
+    transition: 300ms ease;
+    border: none;
+    cursor: pointer;
+    display: block;
+    span{
+        font-size: 1.2rem;
+        color: $black;
+        line-height: 1.6rem;
+        letter-spacing: .2rem;
+        @include bold;
+    }
+    &:hover{
+        background-color: $light-gray;
+        span{
+            color: $black;
+        }
+    }
+}
+.button-4{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0 1.6rem;
+    border: none;
+    cursor: pointer;
+    .button-text{
+        color: $white;
+        line-height: 1.6rem;
+        font-size: 1.2rem;
+        @include bold;
+        padding:0 !important;
+        position: relative;
+        letter-spacing: .2rem;
+        &:after{
+            content: "";
+            position: absolute;
+            bottom: -.2rem;
+            left: 0;
+            width: 100%;
+            background-color: $white;
+            height: .1rem;
+            min-height: .1rem;
+            transition: transform 300ms ease;
+            transform: scale(0);
+        }
+    }
+    .icon{
+        max-width: 4.2rem;
+        max-height: 1.2rem;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &:hover{
+        .button-text{
+            &:after{
+                transform: scale(1.01);
+            }
+        }
+    }
+}
+.animate__zoomInLef{
+    animation: zoomInLef;
+    animation-duration: 2s;
+}

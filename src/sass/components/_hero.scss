@@ -1,0 +1,298 @@
+.main{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    &.active{
+        &:after{
+            content: "";
+            background-color: rgb(0, 0, 0,.3);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 400ms ease;
+        }
+    }
+}
+.hero{
+    &.homepage-block{
+        height: 65rem;
+        overflow: hidden;
+        @include xs{
+            flex-direction: column-reverse;
+            height: 100%;
+        }
+        .text-section{
+            .text{
+                &:before{
+                    content: "";
+                    width: .6rem;
+                    height: 100%;
+                    background:$color-main-accent;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    @include xs{
+                        width: 12.8rem;
+                        height: .6rem;
+                        left: 3.3rem;
+                    }
+                }
+                @include smaller-than-lg{
+                    padding-left: 5rem;
+                    padding-right: 4rem;
+                }
+                @include xs{
+                    padding:7.2rem 2.4rem 7.2rem 3.3rem;
+                }
+            }
+            @include md{
+                max-width:49.5rem;
+                width:49.5rem;
+            }
+            @include xs{
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        .img{
+            @include md{
+                width: calc(100% - 49.5rem);
+            }
+            @include xs{
+                width: 100%;
+                max-width: 100%;
+                max-height: 29.4rem;
+            }
+        }
+    }
+    &.stories{
+        position: relative;
+        overflow: hidden;
+        .text-section{
+            overflow: hidden;
+            position: relative;
+            .gradient{
+                width: 120rem;
+                aspect-ratio: 1.1;
+                position: absolute;
+                left: 0%;
+                top: 105%;
+                transform: translate(-50%, -50%);
+                background: radial-gradient(circle, rgb(255, 197, 147) 0%, rgba(188, 113, 152, 0.3) 52%, rgba(90, 119, 255, 0.1) 60%, rgba(250, 250, 250, .0) 82%);
+                z-index: 2;
+                opacity: .48;
+                @include lg{
+                    display: none;
+                }
+            }
+            .text{
+                z-index: 3;
+                @include xs{
+                    padding: 4.8rem 2.8rem 4.8rem 2.9rem;
+                }
+                .top-title{
+                    font-size: 1.2rem;
+                    @include bold;
+                    line-height: 1.6rem;
+                    color: $white;
+                    margin-bottom: 2.4rem;
+                }
+                .title{
+                    margin-bottom:1.6rem;
+                }
+                &:before{
+                    display: none;
+                }
+                .desc{
+                    margin-bottom: 2.4rem;
+                    z-index: 2;
+                    opacity: .6;
+                }
+                .gradient{
+                    width: 100rem;
+                    position: absolute;
+                    left: -60%;
+                    background: radial-gradient(circle, rgb(255, 197, 147,.6) 0%, rgba(188, 113, 152, 0.3) 36%, rgba(90, 119, 255, 0.1) 60%, rgba(250, 250, 250, .0) 82%);
+                    z-index: 1;
+                    opacity: .48;
+                    transition: 400ms linear;
+                    aspect-ratio: 1.1;
+                }
+                .button-4{
+                    position: relative;
+                    z-index: 2;
+                    &:hover{
+                        ~ .gradient{
+                            left: 10rem;
+                        }       
+                    }
+                }
+            }
+            @include md{
+                max-width:49.5rem;
+                width:49.5rem;
+            }
+            @include xs{
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        .desc-info{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0 .9rem;
+            margin-bottom: 2.4rem;
+            .date{
+                font-size: 1.3rem;
+                @include regular;
+                line-height: 1.7rem;
+                color: rgb(250, 250, 250,.75);
+                display: inline;
+            }
+            .by{
+                font-size: 1.3rem;
+                @include regular;
+                line-height: 1.7rem;
+                color: $white;
+            }
+        }
+        .img{
+            position: absolute;
+            right:0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                display: flex;
+            }
+            @include xs{
+                position: relative;
+                height: 31.7rem;
+                overflow: hidden;
+            }
+        }
+        
+    }
+    &.features{
+        height: 49rem;
+        @include xs{
+            height: 100%;
+        }
+        .text-section{
+            .text{
+                .desc{
+                    margin-bottom: 0;
+                }
+            }
+            @include md{
+                max-width:49.5rem;
+                width:49.5rem;
+            }
+            @include xs{
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+.homepage-block{
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    height: 60rem;
+    @include xs{
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+    .text-section{
+        width: 100%;
+        max-width: 43.36%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include md{
+            width: 100%;
+            max-width: 100%;
+        }
+        &.backg-black{
+            background-color: $black;
+            .text{
+                .title, .desc{
+                    color: $white;
+                }
+            }
+        }
+        &.backg-white{
+            background-color: $white;
+            .text{
+                .title, .desc{
+                    color: $black;
+                }
+            }
+        }
+        .text{
+            max-width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            position: relative;
+            padding-left:11.2rem;
+            padding-right:11.2rem;
+            @include md{
+                padding-left:5.4rem; 
+                padding-right:5.4rem; 
+            }
+            @include xs{
+                padding: 7.2rem 2.4rem 7.2rem 3.3rem
+            }
+            .title{
+                @include bold;
+                font-size: 4rem;
+                line-height: 4.8rem;
+                margin-bottom: 2.1rem;
+                letter-spacing: .47rem;
+                text-transform: uppercase;
+            }
+            .desc{
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                @include regular;
+                margin-bottom: 4.8rem;
+            }
+        }
+    }
+    .img{
+        width: 100%;
+        height: 100%;
+        max-width: 57.64%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: flex;
+        }
+        @include md{
+            max-width: calc(100% - 49.5rem);
+        }
+        @include xs{
+            max-height: 27.1rem;
+            max-width: 100%;
+        }
+    }
+    &:nth-child(even){
+        flex-direction: row-reverse;
+        @include xs{
+            flex-direction: column-reverse;
+        }
+    }
+}

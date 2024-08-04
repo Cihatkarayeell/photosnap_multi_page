@@ -1,0 +1,281 @@
+.pricing-card-block{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 12rem;
+    @include lg{
+        margin: 0 4rem;
+        width: auto;
+    }
+    @include mobile{
+        margin: 0 3rem;
+    }
+    .toggle-section{
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 3.2rem;
+        span{
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            @include bold;
+            color: $black;
+            transition: 400ms ease;
+            &:last-child{
+                opacity: .5;
+            }
+        }
+        .toggle{
+            background-color: #DFDFDF;
+            border-radius: 1.6rem;
+            min-width: 6.4rem;
+            min-height: 3.2rem;
+            position: relative;
+            padding: .4rem;
+            transition: 400ms ease;
+            cursor: pointer;
+            overflow: hidden;
+            .toggle-ball{
+                border-radius: 50%;
+                width: 2.4rem;
+                height: 2.4rem;
+                transition: 400ms ease;
+                position: absolute;
+                top: .4rem;
+                &:first-child{
+                    left: .4rem;
+                    background-color: $black;
+                }
+                &:last-child{
+                    right: -100%;
+                    background-color: $white;
+                }
+            }
+        }
+        &.active{
+            .toggle{
+                background-color: $black;
+                .toggle-ball{
+                    &:first-child{
+                        left: -100%;
+                    }
+                    &:last-child{
+                        right: .4rem;
+                    }
+                }
+            }
+            span{
+                opacity: .5;
+                &:last-child{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .card-wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 3rem;
+        margin-bottom: 16rem;
+        @include xs{
+            gap: 2.4rem 0;
+            flex-wrap: wrap;
+        }
+        @include mobile{
+            margin-bottom: 0;
+        }
+        .pricing-card{
+            padding: 4rem;
+            padding-top: 5.6rem;
+            background-color: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            max-width: 35rem;
+            position: relative;
+            @include xs{
+                width: 100%;
+                max-width: 100%;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex-direction: row;
+                padding-top: 4rem;
+            }
+            @include mobile{
+                align-items: center;
+                padding: 5.6rem 2.2rem 4rem 2.1rem;
+            }
+            .pricing-card-d-flex{
+                @include mobile{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            .title{
+                font-size: 2.4rem;
+                line-height: 2.5rem;
+                @include bold;
+                margin-bottom: 1.8rem;
+                @include xs{
+                    max-width: 27rem;
+                }
+                @include mobile{
+                    max-width: 100%;
+                }
+            }
+            .desc{
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                @include regular;
+                color: $black;
+                opacity: .6;
+                margin-bottom: 4rem;
+                @include xs{
+                    max-width: 27rem;
+                    text-align: left;
+                    margin-bottom: 3.2rem;
+                }
+                @include mobile{
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+            .price{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+                overflow: hidden;
+                height: 4.8rem;
+                width: 100%;
+                @include xs{
+                    max-width: 27rem;
+                }
+                @include mobile{
+                    max-width: 100%;
+                }
+                .total-price{
+                    font-size: 4rem;
+                    line-height: 4.8rem;
+                    @include bold;
+                    letter-spacing: .41rem;
+                    height: 4.8rem;
+                    width: 100%;
+                    display: block;
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: 400ms ease;
+                    @include xs{
+                        transform: none;
+                        right: 0;
+                        left: auto;
+                        width: auto;
+                    }
+                    &:last-child{
+                        top: 100%;
+                        position: absolute;
+                    }
+                    @include mobile{
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 100%;
+                    }
+                }
+                
+            }
+            
+            .price-desc{
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                color: $black;
+                opacity: .6;
+                @include regular;
+                margin-bottom: 4rem;
+                @include xs{
+                    max-width: 27rem;
+                    text-align: right;
+                }
+                @include mobile{
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+            a{
+                width: 100%;
+            }
+            &.black{
+                background-color: $black;
+                padding-top: 8.8rem;
+                padding-bottom: 7.1rem;
+                position: relative;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: .6rem;
+                    background: $color-main-accent;
+                }
+                @include xs{
+                    padding-top: 4rem;
+                    padding-bottom: 4rem;
+                }
+                .title{
+                    color: $white;
+                }
+                .desc{
+                    color: $white;
+                }
+                .price{
+                    color: $white;
+                }
+                .price-desc{
+                    color: $white;
+                }
+            }
+            .button-1{
+                @include xs{
+                    max-width: 27rem;
+                }
+            }
+            &.yearly{
+                .total-price{
+                    position: absolute;
+                    top: -100%;
+                    &:last-child{
+                        top: 0;
+                    }
+                }
+            }
+            .price-section{
+                max-width: 27rem;
+                width: 100%;
+                @include xs{
+                    position:absolute;
+                    right:4.8rem;
+                    top: 4.2rem; 
+                }
+                @include mobile{
+                    position: relative;
+                    right: auto;
+                    top: auto;
+                }
+            }
+        }
+    }
+}
