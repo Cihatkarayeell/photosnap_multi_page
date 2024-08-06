@@ -1,4 +1,3 @@
-app.header.init()
 
 
 const toggleBall = document.querySelector('.toggle-section');
