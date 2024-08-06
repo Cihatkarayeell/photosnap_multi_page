@@ -5,7 +5,6 @@ const GET_PARAM = (key) => {
 	return new URL(FULL_URL).searchParams.get(key);
 };
 
-app = [];
 
 // PARTIALS
 @@include('partial/header.js') 
