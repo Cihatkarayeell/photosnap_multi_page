@@ -13,6 +13,7 @@
         cursor: pointer;
         height: 50rem;
         overflow: hidden;
+        z-index: 1;
         @include bigger-than-xl {
             height: 65rem;
         }
@@ -113,6 +114,12 @@
             transform: translateY(-2.4rem);
             &::before {
                 z-index: 2;
+              }
+              @include md{
+                transform: none;
+                &::before{
+                    z-index: -1;
+                }
               }
         }
 
